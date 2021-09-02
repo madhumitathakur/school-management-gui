@@ -1,0 +1,39 @@
+<h1> Only admin can Update fee here</h1>
+<div>
+    <form #form="ngForm" (ngSubmit)="updateFee()">
+      <div class="container"> 
+          <label>Select Class : </label> 
+          <select  class="form-control" name="selectedClass"  (ngModelChange)="changeClass($event)" [(ngModel)]="selectedClassId">  
+            <option   *ngFor="let classDetail of classDetails" [ngValue]="classDetail">{{classDetail.className}}</option>
+          </select>
+          <div *ngIf="selectedClass">
+            <label>Admission Fee: </label>
+            <input name="admissionFee" type="text" [(ngModel)]="selectedClass.admissionFee">
+            <label>Monthly Fee: </label>
+            <input name="monthlyFee" type="text" [(ngModel)]="selectedClass.monthlyFee">
+            <label>Examination Fee: </label>
+            <input name="examFee" type="text" [(ngModel)]="selectedClass.examinationFee">
+            <button type="submit" btn btn-primary>Submit</button> 
+        </div>    
+      </div>   
+    </form>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Class</th>
+            <th scope="col">Admission Fee</th>
+            <th scope="col">Montly Fee</th>
+            <th scope="col">Exam Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let classDetail of classDetails">
+            <th scope="row">{{classDetail.className}}</th>
+            <td>{{classDetail.admissionFee}}</td>
+            <td>{{classDetail.monthlyFee}}</td>
+            <td>{{classDetail.examinationFee}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+  </div>

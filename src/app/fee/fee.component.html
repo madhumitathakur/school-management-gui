@@ -1,0 +1,50 @@
+<h1>Fee Payment Details</h1>
+<form>
+<div class="form-group">
+    <div class="form-group col-md-6 col-sm-6">
+        <div class="input-group">
+            <span class="input-group-addon">Select Fee</span>
+            <select name="fee_patment-type" id="select_fee_type" class="form-control" [(ngModel)]="feeType">
+                <option value="1">Monthly Fee</option>
+                <option value="2">Examination Fee</option>
+                <option value="2">Admission Fee</option>
+        </select>
+        </div>
+    </div>
+    <div class="form-group col-md-4 col-sm-4" name="payment_amount_div_value" style="display: block;">
+        <div class="input-group">
+            <span class="input-group-addon">Amount: </span>
+            {{feeType == "1"?user.classDetails.monthlyFee: user.classDetails.examinationFee}}
+        </div>
+    </div>
+    <div class="form-group col-md-2 col-sm-2">
+        <div class="input-group">
+            <input type="submit" value="Proceed Payment" class="pull-right btn btn-primary">
+
+        </div>
+    </div>
+</div>
+</form>
+
+<br>
+<br>
+
+
+<table>
+    <tr>
+      <th>Sl No.</th>
+      <th>Month</th>
+      <th>Fee Amount</th>
+      <th>Transaction Number</th>
+      <th>Date Of Payment</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>June</td>
+      <td>800</td>
+      <td>65001245</td>
+      <th>01/06/2021</th>
+      <th>Paid</th>
+    </tr>
+  </table>

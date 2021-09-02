@@ -1,0 +1,17 @@
+<h1>Admission related information </h1>
+
+<div>
+  <form #form="ngForm" (ngSubmit)="getAdmission()">
+    <div class="container"> 
+        <label>Select Class : </label> 
+        <select  class="form-control" name="selectedClass" [(ngModel)]="selectedClassId">  
+          <option   *ngFor="let classDetail of classDetails" [value]="classDetail.id">{{classDetail.className}}</option>
+        </select>
+        <label>Select Name: </label>
+        <select *ngIf="loggedInUser.isAdmin" class="form-control" name="user" [(ngModel)]="selectedUserId">  
+          <option  *ngFor="let user of users" [value]="user.registrationId">{{user.firstname}}</option>
+        </select>
+        <button type="submit" btn btn-primary>Submit</button>   
+    </div>   
+  </form>
+</div>

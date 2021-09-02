@@ -1,0 +1,10 @@
+h1{
+    color:crimson;
+}
+input.ng-invalid.ng-touched
+{
+    border-color: red;
+}
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red
+}

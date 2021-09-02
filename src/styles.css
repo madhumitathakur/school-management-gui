@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+mat-sidenav {
+    width: 280px;
+    padding: 15px;
+}
+.main-content {
+    padding: 20px;
+}
+.mat-drawer {
+    background-color: blue; 
+    color: cornsilk;
+}
+.toolbar-spacer {
+    flex: 1 1 auto ;
+}
+
+a.active {
+    color: hotpink;
+}
+table, th, td {
+    border: 1px solid black;
+    
+  }
+  
+  th, td {
+    padding: 10px;
+    
+    }
+ tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }

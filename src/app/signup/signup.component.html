@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="row">
+        <div class="col-11"></div>
+        <div class="col-1"><h2><a routerLink ="/Login">Login</a></h2></div>
+    </div>
+</div>
+
+<h1 class="text-center" colspan="=2">Signup</h1>
+<div class="container">
+<div class="row">
+    <div class="col-3"></div>
+        <div class="col-6">
+            <form #signupForm="ngForm" (ngSubmit)="submitForm()">
+            <br>
+                <div class="form-group">
+                    <input class="form-control"
+                    required ngModel
+                    name="firstname" 
+                    placeholder="First Name" 
+                    #firstname="ngModel" 
+                    type="text"
+                    [(ngModel)]=user1.firstname>
+                    <div class="alert alert-danger" 
+                        *ngIf="firstname.touched && !firstname.valid">
+                        Enter Firstname
+                    </div>
+                </div> 
+                <br>
+                <div class="form-group">
+                    <input class="form-control"
+                    required ngModel
+                    name="lastname" 
+                    placeholder="Last Name" 
+                    #lastname="ngModel" 
+                    type="text"
+                    [(ngModel)]=user1.lastname>
+                    <div class="alert alert-danger" 
+                        *ngIf="lastname.touched && !lastname.valid">
+                        Enter Lastname
+                    </div>
+                </div>
+            <br>
+                <div class="form-group">
+                    <input class="form-control" 
+                    name="email" placeholder="Email"
+                    #email="ngModel" 
+                    type="email"  
+                    email required ngModel
+                    [(ngModel)]=user1.email
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                    <div class="alert alert-danger" 
+                        *ngIf="email.touched && !email.valid">
+                        Enter a valid Email
+                    </div>
+                </div>
+            <br>
+
+                <div class="form-group">
+                    <input class="form-control" 
+                    placeholder="Phone Number" 
+                    required minlength="10" 
+                    maxlength="10" 
+                    name="phone" 
+                    #phone="ngModel" 
+                    [(ngModel)]=user1.phone
+                    phone required ngModel>
+                    <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">
+                        <div 
+                            *ngIf="phone.errors.required">
+                            Phone number is required.
+                        </div>
+                        <div
+                            *ngIf="phone.errors.minlength">
+                            Phone number is minimum {{ phone.errors.minlength.requiredLength }} number.
+                        </div>
+                    <br>
+                        <div 
+                            *ngIf="phone.errors.maxlength">
+                            Phone number is maximum 10 digit.
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <input class="form-control" 
+                            name="pwd" 
+                            type="password" 
+                            placeholder="Password" 
+                            #password="ngModel" 
+                            [(ngModel)]=user1.password
+                            password required ngModel>
+                    <div 
+                        class="alert alert-danger" 
+                        *ngIf="password.touched && !password.valid">
+                        Password is required.
+                    </div>
+                </div>
+                <br>
+
+                <div class="checkbox">
+                    <label>
+                        <input #saveUsername 
+                                [(ngModel)]="saveUsername.selected" 
+                                type="checkbox" 
+                                name="checkbox" 
+                                [(ngModel)]=user1.isAdmin
+                                data-toggle="toggle"> 
+                                Admin
+                    </label>
+                    </div>
+                    <br>
+                
+                <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Register</button>
+            </form>
+        </div>
+    <div class="col-3"></div>
+
+</div>
+</div>
+
