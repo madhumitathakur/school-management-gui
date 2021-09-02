@@ -1,0 +1,22 @@
+body {
+    background-color:blueviolet;
+    background-image: url("https://westendss.eq.edu.au/HomePagePictures/slide-01.jpg");
+  }
+  
+  h1 {
+    color:blue;
+    text-align:center;
+  }
+  h2 {
+    width: 100%;
+    text-align:center;
+}
+  /* form {
+      text-align: left;
+
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  } */

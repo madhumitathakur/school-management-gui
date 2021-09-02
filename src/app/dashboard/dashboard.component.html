@@ -1,0 +1,29 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav opened mode="side">
+      <h1>School Of Science</h1>
+        <img  src="./assets/logo1.png" alt="aayi">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="['/dashboard/admission']">Get Admission</a>
+        <a mat-list-item [routerLink]="['/dashboard/attendence']">Attendence</a>
+        <a mat-list-item [routerLink]="['/dashboard/marks']">Marks</a>
+        <a mat-list-item [routerLink]="['/dashboard/fee']">Fee Payment</a>
+        <a mat-list-item [routerLink]="['/dashboard/registration']">Result</a>
+        <a *ngIf="user?.isAdmin" mat-list-item [routerLink]="['/dashboard/feeupdate']">Fee Update</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h2>{{user.firstname}}</h2>
+
+        <span class="toolbar-spacer"></span>
+        <a mat-list-item routerLink ="/Login">Log out</a>
+      </mat-toolbar>
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+

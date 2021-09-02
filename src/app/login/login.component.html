@@ -1,0 +1,55 @@
+<h1 class="text-center" colspan="=2">Login</h1>
+<div class="container">
+<div class="row">
+    <div class="col-3"></div>
+        <div class="col-6">
+            <form #loginForm="ngForm" 
+            (ngSubmit)="login(loginForm)">
+            <br>
+            <input class="form-control" 
+                   name="email" 
+                   placeholder="Email"
+                   #email="ngModel" 
+                   required 
+                   email ngModel>
+            <div class="alert alert-danger" 
+                 *ngIf="email.touched && !email.valid">
+                <div *ngIf="email.errors.required">
+                    Email is required.
+                </div>
+                <div *ngIf="email.errors.email">
+                    Invalid Email.
+                </div>
+                please Enter Registered Email
+            </div>
+
+
+            <br>
+            <div class="form-group">
+                <input class="form-control" 
+                       type="password" 
+                       name="pwd" 
+                       placeholder="Password"
+                       #password="ngModel"
+                       required ngModel>
+                <div class="alert alert-danger" 
+                     *ngIf="password.dirty && !password.valid">
+                     Password is required.
+                </div>
+            </div>
+            <br/>
+            <div class="align-center"> 
+                <button type="submit" 
+                        class="btn btn-primary" 
+                        [disabled]="!loginForm.valid">
+                        Login
+                </button>
+                <button >reset</button>
+            </div> 
+            </form>    
+        </div>
+    <div class="col-3"></div>  
+</div>
+</div>
+
+
